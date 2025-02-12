@@ -30,6 +30,7 @@ input {
     border-radius: 8px; /* Rounded corners for inputs */
     font-size: 1rem;
     transition: border-color 0.3s; /* Smooth transition for focus */
+    color: #000000; /* Dark gray text */
 }
 
 /* Change input border color on focus */
