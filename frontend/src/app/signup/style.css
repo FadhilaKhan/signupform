@@ -29,9 +29,8 @@ input {
     border: 1px solid #ccc; /* Light gray border */
     border-radius: 8px; /* Rounded corners for inputs */
     font-size: 1rem;
-    transition: border-color 0.3s; /* Smooth transition for focus */
-    color: #000000; /* Dark gray text */
-}
+    transition: border-color 0.3s; 
+    color: #000000; 
 
 /* Change input border color on focus */
 input:focus {
