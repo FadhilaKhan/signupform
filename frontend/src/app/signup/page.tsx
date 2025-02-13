@@ -3,117 +3,134 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { FaGoogle } from "react-icons/fa";
 
-interface SignupResponse {
-  message: string;
-  user_id: number;
-}
-
-const Signup: React.FC = () => {
-  const router = useRouter();
+export default function Signup() {
   const [formData, setFormData] = useState({
-    FirstName: '',
-    LastName: '',
-    EmailAddress: '',
-    MobileNumber: '',
-    password: '',
-    confirmPassword: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    mobile: "",
+    password: "",
+    confirmPassword: "",
   });
-
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
-    setSuccess(null);
-
-    if (formData.password !== formData.confirmPassword) {
-      setError('Passwords do not match');
-      return;
-    }
-
-    try {
-      const response = await axios.post<SignupResponse>('http://localhost:8000/signup', formData);
-      setSuccess(response.data.message);
-      router.push('/login'); // Redirect to login after successful signup
-    } catch (err: any) {
-      setError(err.response?.data?.detail || 'An error occurred');
-    }
+    console.log("Form submitted", formData);
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        {success && <p className="text-green-500 mb-4">{success}</p>}
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="flex min-h-screen">
+      {/* Left Section - Signup Form */}
+      <div className="w-1/2 flex flex-col justify-center items-center bg-white px-10 py-16 shadow-lg">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Sign Up</h2>
+        <p className="text-gray-500 text-sm mb-6">
+          By signing up, you agree to the{" "}
+          <a href="#" className="text-blue-600 underline">
+            Terms of Use
+          </a>{" "}
+          and{" "}
+          <a href="#" className="text-blue-600 underline">
+            Privacy Policy
+          </a>
+          .
+        </p>
+
+        <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
           <input
             type="text"
-            name="FirstName"
+            name="firstName"
             placeholder="First Name"
-            value={formData.FirstName}
+            className="w-full p-3 border border-gray-300 rounded-lg"
             onChange={handleChange}
-            className="w-full p-3 border rounded-xl"
             required
           />
           <input
             type="text"
-            name="LastName"
+            name="lastName"
             placeholder="Last Name"
-            value={formData.LastName}
+            className="w-full p-3 border border-gray-300 rounded-lg"
             onChange={handleChange}
-            className="w-full p-3 border rounded-xl"
             required
           />
           <input
             type="email"
-            name="EmailAddress"
+            name="email"
             placeholder="Email Address"
-            value={formData.EmailAddress}
+            className="w-full p-3 border border-gray-300 rounded-lg"
             onChange={handleChange}
-            className="w-full p-3 border rounded-xl"
             required
           />
           <input
             type="text"
-            name="MobileNumber"
+            name="mobile"
             placeholder="Mobile Number"
-            value={formData.MobileNumber}
+            className="w-full p-3 border border-gray-300 rounded-lg"
             onChange={handleChange}
-            className="w-full p-3 border rounded-xl"
             required
           />
           <input
             type="password"
             name="password"
             placeholder="Password"
-            value={formData.password}
+            className="w-full p-3 border border-gray-300 rounded-lg"
             onChange={handleChange}
-            className="w-full p-3 border rounded-xl"
             required
           />
           <input
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
-            value={formData.confirmPassword}
+            className="w-full p-3 border border-gray-300 rounded-lg"
             onChange={handleChange}
-            className="w-full p-3 border rounded-xl"
             required
           />
-          <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded-xl hover:bg-blue-600 transition">
-            Sign Up
+
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition"
+          >
+            Next
           </button>
         </form>
+
+        <p className="text-gray-500 text-sm mt-4">
+          Already have an account?{" "}
+          <a href="#" className="text-blue-600 underline">
+            Log in
+          </a>
+        </p>
+
+        <button className="mt-4 flex items-center justify-center gap-2 border p-3 rounded-lg w-full text-gray-700 hover:bg-gray-100 transition">
+          <FaGoogle />
+          Continue with Google
+        </button>
+      </div>
+
+      {/* Right Section - Benefits & Illustration */}
+      <div className="w-1/2 flex flex-col justify-center items-center text-white bg-gradient-to-r from-gray-800 to-black px-10 py-16 relative">
+        <img
+          src="/car-image.png"
+          alt="Luxury Car"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="relative z-10 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Benefits of creating an account
+          </h2>
+          <ul className="text-lg space-y-3">
+            <li>✅ Save posts</li>
+            <li>✅ Access to AI tools</li>
+            <li>✅ Sell cars</li>
+            <li>✅ Post comments, make friends</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
-};
-
-export default Signup;
+}

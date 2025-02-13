@@ -27,10 +27,11 @@ input {
     width: 100%; /* Make inputs stretch to container width */
     padding: 0.75rem; /* Inner padding for inputs */
     border: 1px solid #ccc; /* Light gray border */
-    border-radius: 8px; /* Rounded corners for inputs */
+    border-radius: 8px; 
     font-size: 1rem;
     transition: border-color 0.3s; 
     color: #000000; 
+}
 
 /* Change input border color on focus */
 input:focus {
