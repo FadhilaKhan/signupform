@@ -49,7 +49,7 @@ export default function Signup() {
             type="text"
             name="firstName"
             placeholder="First Name"
-            className="w-full p-3 w-[399px] h-[40px] border border-gray-300 rounded-lg"
+            className="w-full p-3 w-[399px] h-[37px] border border-gray-300 rounded-lg"
             onChange={handleChange}
             required
           />
@@ -57,7 +57,7 @@ export default function Signup() {
             type="text"
             name="lastName"
             placeholder="Last Name"
-            className="w-full p-3 w-[399px] h-[40px] border border-gray-300 rounded-lg"
+            className="w-full p-3 w-[399px] h-[37px] border border-gray-300 rounded-lg"
             onChange={handleChange}
             required
           />
@@ -65,7 +65,7 @@ export default function Signup() {
             type="email"
             name="email"
             placeholder="Email Address"
-            className="w-full p-3 w-[399px] h-[40px] border border-gray-300 rounded-lg"
+            className="w-full p-3 w-[399px] h-[37px] border border-gray-300 rounded-lg"
             onChange={handleChange}
             required
           />
@@ -73,7 +73,7 @@ export default function Signup() {
             type="text"
             name="mobile"
             placeholder="Mobile Number"
-            className="w-full p-3 w-[399px] h-[40px] border border-gray-300 rounded-lg"
+            className="w-full p-3 w-[399px] h-[37px] border border-gray-300 rounded-lg"
             onChange={handleChange}
             required
           />
@@ -81,7 +81,7 @@ export default function Signup() {
             type="password"
             name="password"
             placeholder="Password"
-            className="w-full p-3 w-[399px] h-[40px] border border-gray-300 rounded-lg"
+            className="w-full p-3 w-[399px] h-[37px] border border-gray-300 rounded-lg"
             onChange={handleChange}
             required
           />
@@ -89,26 +89,26 @@ export default function Signup() {
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
-            className="w-full p-3 w-[399px] h-[40px] border border-gray-300 rounded-lg"
+            className="w-full p-3 w-[399px] h-[37px] border border-gray-300 rounded-lg"
             onChange={handleChange}
             required
           />
 
           <button
             type="submit"
-            className="w-full bg-blue-500 w-[399px] h-[40px] text-white p-3 rounded-lg hover:bg-blue-600 transition"
+            className="w-full bg-blue-500 w-[399px] h-[37px] text-white p-3 rounded-lg hover:bg-blue-600 transition"
           >
             Next
           </button>
 
-          <p className="text-gray-500 w-[399px] h-[40px] text-sm mt-4">
+          <p className="text-gray-500 w-[399px] h-[37px] text-sm mt-4">
           Already have an account?{" "}
           <a href="#" className="text-blue-600 underline">
             Log in
           </a>
         </p>
 
-        <button className="mt-4 flex items-center justify-center gap-2 border p-3 w-[399px] h-[40px] rounded-lg w-full text-gray-700 hover:bg-gray-100 transition">
+        <button className="mt-4 flex items-center justify-center gap-2 border p-3 w-[399px] h-[37px] rounded-lg w-full text-gray-700 hover:bg-gray-100 transition">
           <FaGoogle />
           Continue with Google
         </button>
