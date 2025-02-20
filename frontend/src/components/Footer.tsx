@@ -1,7 +1,11 @@
-export default function Footer() {
+import React from "react";
+
+const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white text-center p-4 mt-10">
-      <p>&copy; {new Date().getFullYear()} Axioralabs. All rights reserved.</p>
+    <footer className="bg-gray-800 text-white py-4 text-center">
+      <p className="text-sm">&copy; {new Date().getFullYear()} Infinity Runner. All rights reserved.</p>
     </footer>
   );
-}
+};
+
+export default Footer;
