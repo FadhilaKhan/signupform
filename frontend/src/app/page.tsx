@@ -24,6 +24,13 @@ export default function Home() {
       >
         Sign Up
       </button>
+    <br />
+      <button
+        className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-700"
+        onClick={handleSignUpClick}
+      >
+        Sign Up
+      </button>
     </div>
   );
 }

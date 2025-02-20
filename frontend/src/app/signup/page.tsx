@@ -122,7 +122,7 @@ export default function Signup() {
       {/* Right Section - Benefits & Illustration */}
       <div className="w-1/2 flex flex-col justify-center items-center text-black bg-white px-10 py-16 relative">
       <img
-        src="images/luxury-car.jpg"
+        src='/car.jpg'
         alt="Luxury Car"
         className="absolute inset-0 w-full h-full object-cover opacity-30"
       />
